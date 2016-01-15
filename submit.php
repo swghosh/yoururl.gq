@@ -1,22 +1,16 @@
 <?php include('log.php');?>
 <?php include('db.php');
-$query=mysqli_query($db,"SELECT * FROM `links`");
-$num_rows=mysqli_num_rows($query);
-if(isset($_GET['url'])){
-$val=intval($_GET['url']);
-if($val<=0||$val>$num_rows)
-{
+if(isset($_POST['url'])==false || empty($_POST['url']))
 header('Location: ./');
-}
-else{
-$sql="SELECT * FROM `links` WHERE `id`=".$_GET['url'];
+if(substr($_POST['url'],0,7)!="http://" && substr($_POST['url'],0,8)!="https://")
+$_POST['url']='http://'.$_POST['url'];
+$q="INSERT INTO `links` (`url`) VALUES ('".$_POST['url']."');";
+mysqli_query($db,$q);
+$sql="SELECT * FROM `links` WHERE `url`='".$_POST['url']."'";
 $result=mysqli_query($db,$sql);
-$resultarray=mysqli_fetch_array($result);
-$url=$resultarray['url'];
-header('Location: '.$url);
-}
-}
-else {
+$aar=mysqli_fetch_array($result);
+$id=$aar['id'];
+$fullurl="http://".$_SERVER['HTTP_HOST']."/?url=".$id;
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -36,7 +30,7 @@ else {
 				<h2>www.yoururl.gq</h2>
 			</div>
 			<div class="form">
-				<p>shorten your URL - </p><form method="POST" action="submit.php"><input type="text" id="test" name="url" placeholder="Enter Your Long URL" required="yes" /><input type="submit" class="submit" value=">>"/></form>
+				<p>your shortened URL - </p><input type="text" id="test" name="url" value="<?php echo $fullurl; ?>"/>
 			</div>
 			<ul class="social">
 				<li><a href="https://twitter.com/SwG_Ghosh" class="twitter-follow-button" data-show-count="false">Follow @SwG_Ghosh</a>
@@ -68,9 +62,10 @@ var placeholder = $("#test").val();
 
 $("#test").keydown(function() {
     if (this.value == placeholder) {
-        this.value = '';
+        this.value = placeholder;
     }
 }).blur(function() {
+	this.value = placeholder;
     if (this.value == '') {
         this.value = placeholder;
     }
@@ -78,6 +73,3 @@ $("#test").keydown(function() {
 </script>
 </body>
 </html>
-<?php
-}
-?>

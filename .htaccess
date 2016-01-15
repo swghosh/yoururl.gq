@@ -1,0 +1,7 @@
+RewriteBase /
+<Files db.php>
+Require all denied
+</Files>
+<Files log.php>
+Require all denied
+</Files>

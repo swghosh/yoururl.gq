@@ -1,0 +1,156 @@
+/* Reset */
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,dfn,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+
+
+
+html,body{
+margin:0;
+padding:0;
+font-family: Georgia;
+background: #fff url(../images/bg.jpg) center top no-repeat;
+}
+
+#wrapper{
+width: 940px;
+margin: 0 auto;
+}
+
+.main, .header{
+width: 100%;
+float: left;
+}
+
+.header{
+height: 499px;
+}
+
+.logo{
+width: 350px;
+margin: 160px auto 40px;
+text-align: center;
+}
+
+h1{
+font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+color: #fff;
+font-size: 56px;
+font-weight:200;
+letter-spacing: -2px;
+margin-bottom: 10px;
+}
+
+h1 strong{
+color: #a7e09f;
+}
+
+h2{
+font-size: 10px;
+color: #fff;
+text-transform: uppercase;
+letter-spacing: 3px;
+}
+
+.form{
+width: 390px;
+margin: 0 auto;
+color: #fff;
+}
+
+.form p{
+font-size: 9px;
+text-transform: uppercase;
+letter-spacing: 1px;
+float: left;
+padding-top: 9px;
+margin-right: 10px;
+}
+
+.form input{
+-webkit-border-radius: 5px 5px 5px 5px;
+border-radius: 5px 5px 5px 5px;
+border: 1px solid #7d706b;
+background: none;
+font-size: 9px;
+letter-spacing: 2px;
+color: #beb7b3;
+width: 180px;
+text-transform: lowercase;
+font-family: Georgia;
+padding: 8px 10px;
+}
+
+.form input.submit{
+-webkit-border-radius: 5px 5px 5px 5px;
+border-radius: 5px 5px 5px 5px;
+border: 1px solid #7d706b;
+background: none;
+font-size: 9px;
+letter-spacing: 2px;
+color: #beb7b3;
+width: 33px;
+text-transform: uppercase;
+font-family: Georgia;
+padding: 8px 10px;
+}
+
+ul.social{
+width: 131px;
+margin: 141px auto 0;
+height: 19px;
+background: url(../images/transy.png) repeat;
+-webkit-border-radius: 15px 15px 0 0;
+border-radius: 15px 15px 0 0;
+padding: 10px 26px;
+}
+
+
+
+ul.boxes{
+margin-top: 50px;
+width: 100%;
+float: left;
+}
+
+h3{
+font-size: 14px;
+margin-bottom: 10px;
+text-transform: none;
+}
+
+ul.boxes li{
+font-size: 16px;
+font-weight: bold;
+position: relative;
+text-transform: uppercase;
+float: left;
+text-align: center;
+letter-spacing: 2px;
+color: #433022;
+margin-right: 20px;
+width: 300px;
+}
+
+span.divider{
+position: absolute;
+width: 1px;
+height: 20px;
+background: #d3d1cf;
+right: -5px;
+}
+
+ul.boxes li.last{
+float: left;
+margin-right: 0;
+width: 300px;
+}
+
+ul.boxes li a{
+color: #433022;
+text-decoration: none;
+}
+
+
+ul.boxes li a:hover{
+text-decoration: underline;
+}
