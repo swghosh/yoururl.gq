@@ -1,5 +1,5 @@
 <?php 
-include('visitor.php')
+include('visitor.php');
 include('db.php');
 
 if(isset($_POST['url']) == false || empty($_POST['url'])) die(header('Location: ./'));
