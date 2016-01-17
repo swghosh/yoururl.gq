@@ -1,4 +1,15 @@
-<?php 
+<?php
+require_once 'autoload.php';
+$siteKey = '6Lf0khUTAAAAABsM8IlNq3CAJn2kWaYw5tdy34mN';
+$secret = '6Lf0khUTAAAAAJlAiVFHMrxOCh-wBZiXC9BYkcUa';
+$recaptcha = new \ReCaptcha\ReCaptcha($secret);
+$resp = $recaptcha->verify($gRecaptchaResponse, $remoteIp);
+if ($resp->isSuccess()) {
+    // verified!
+} else {
+    die(header('Location: ./'));
+} 
+
 include('visitor.php');
 include('db.php');
 
