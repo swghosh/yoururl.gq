@@ -1,4 +1,5 @@
 <?php 
+include('visitor.php')
 include('db.php');
 
 if(isset($_POST['url']) == false || empty($_POST['url'])) die(header('Location: ./'));
@@ -26,7 +27,7 @@ $fullurl = "http://".$_SERVER['HTTP_HOST']."/?url=" . $id;
 		<h1><a href="http://www.yoururl.gq">www.yoururl.gq</a></h1>
 		<h3>get your long URL shortened in seconds..</h3>
 		<br/>
-		<p><label for="url"> short url -></label> <a href="<?php echo $fullurl; ?>"><?php echo $fullurl; ?></p>
+		<p><label for="url"> short url -></label> <a href="<?php echo $fullurl; ?>"><?php echo $fullurl; ?></a></p>
 		<br/>
 		<footer>
 			you're visitor# <?php echo $visitor; ?><br/>
