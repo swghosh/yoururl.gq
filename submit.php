@@ -1,7 +1,7 @@
 <?php 
 include('db.php');
 
-if(!$resp->is_valid || isset($_POST['url']) == false || empty($_POST['url'])) die(header('Location: ./'));
+if(isset($_POST['url']) == false || empty($_POST['url'])) die(header('Location: ./'));
 if(substr($_POST['url'], 0, 7) != "http://" && substr($_POST['url'], 0, 8) != "https://") $_POST['url']='http://' . $_POST['url'];
 $q = "INSERT INTO `links` (`url`) VALUES ('" . $_POST['url']."');";
 mysqli_query($db,$q);
