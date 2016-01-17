@@ -19,6 +19,10 @@ a {
   color: #fff;
 }
 
+div {
+    text-align: center;
+}
+
 input.link {
   font-family: none;
   width: 30%;

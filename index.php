@@ -28,7 +28,6 @@ else {
 		<meta name="description" content="A simple URL shortener.">
     	<meta name="author" content="http://swghosh.tk">
     	<meta name="theme-color" content="#1B1B4C">
-		<script src='https://www.google.com/recaptcha/api.js'></script>
 	</head>
 	<body>
 		<h1><a href="http://www.yoururl.gq">www.yoururl.gq</a></h1>
@@ -36,7 +35,10 @@ else {
 		<br/>
 		<form method="POST" action="submit.php">
 			<label for="url">long URL -></label> <input class="link" type="text" name="url" placeholder="place your long URL here" required="yes" /><br/><br/>
-			<div align="center" class="g-recaptcha" data-sitekey="6Lf0khUTAAAAABsM8IlNq3CAJn2kWaYw5tdy34mN"></div><br/>
+			<?php 
+			require_once('recaptchalib.php');
+  			$publickey = "6Lf0khUTAAAAABsM8IlNq3CAJn2kWaYw5tdy34mN";
+  			echo recaptcha_get_html($publickey); ?><br/>
 			<input class="button" type="submit" value="shorten >>" />
 		</form>
 		<br/>
