@@ -1,15 +1,4 @@
 <?php
-require_once 'autoload.php';
-$siteKey = '6Lf0khUTAAAAABsM8IlNq3CAJn2kWaYw5tdy34mN';
-$secret = '6Lf0khUTAAAAAJlAiVFHMrxOCh-wBZiXC9BYkcUa';
-$recaptcha = new \ReCaptcha\ReCaptcha($secret);
-$resp = $recaptcha->verify($gRecaptchaResponse, $remoteIp);
-if ($resp->isSuccess()) {
-    // verified!
-} else {
-    die(header('Location: ./'));
-} 
-
 include('visitor.php');
 include('db.php');
 
@@ -38,7 +27,10 @@ $fullurl = "http://".$_SERVER['HTTP_HOST']."/?url=" . $id;
 		<h1><a href="http://www.yoururl.gq">www.yoururl.gq</a></h1>
 		<h3>get your long URL shortened in seconds..</h3>
 		<br/>
-		<p><label for="url"> short url -></label> <a href="<?php echo $fullurl; ?>"><?php echo $fullurl; ?></a></p>
+		<p>
+			<label for="url"> short url -></label> <a href="<?php echo $fullurl; ?>"><?php echo $fullurl; ?></a><br/>
+			now copy and paste this shorter link!
+		</p>
 		<br/>
 		<footer>
 			you're visitor# <?php echo $visitor; ?><br/>
