@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'Architects Daughter';
+  src: url("./ArchitectsDaughter.ttf");
+  src: url("./ArchitectsDaughter.ttf") format("truetype");
+  font-weight: 400px;
+  font-style: normal;
+}
+
+body {
+    /*background-color: #1B1B4C; */
+    background-color: #000;
+    color: #fff;
+    font-family: 'Architects Daughter';
+    margin: 10%;
+    text-align: center;
+}
+
+a {
+  color: #fff;
+}
+
+input.link {
+  font-family: none;
+  width: 30%;
+}
+
+input.button {
+  font-family: 'Architects Daughter';
+  /*background-color: #1B1B4C; */
+  background-color: #000;
+  color: #fff;
+}
