@@ -34,11 +34,7 @@ else {
 		<h3>get your long URL shortened in seconds..</h3>
 		<br/>
 		<form method="POST" action="submit.php">
-			<label for="url">long URL -></label> <input class="link" type="text" name="url" placeholder="place your long URL here" required="yes" /><br/><br/>
-			<?php 
-			require_once('recaptchalib.php');
-  			$publickey = "6Lf0khUTAAAAABsM8IlNq3CAJn2kWaYw5tdy34mN";
-  			echo recaptcha_get_html($publickey); ?><br/>
+			<label for="url">long URL -></label> <input class="link" type="text" name="url" placeholder="place your long URL here" required="yes" />
 			<input class="button" type="submit" value="shorten >>" />
 		</form>
 		<br/>

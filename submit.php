@@ -1,9 +1,4 @@
 <?php 
-include_once('visitor.php'); 
-require_once('recaptchalib.php');
-$privatekey = "6Lf0khUTAAAAABsM8IlNq3CAJn2kWaYw5tdy34mN";
-$resp = recaptcha_check_answer ($privatekey, $_SERVER["REMOTE_ADDR"], $_POST["recaptcha_challenge_field"], $_POST["recaptcha_response_field"]);
-
 include('db.php');
 
 if(!$resp->is_valid || isset($_POST['url']) == false || empty($_POST['url'])) die(header('Location: ./'));
